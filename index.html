@@ -4,600 +4,189 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rongxin Cheng</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy: #1a2a4a;
-      --accent: #2c5f8a;
-      --light-accent: #e8f0f7;
-      --text: #2d2d2d;
-      --muted: #666;
-      --border: #d4dde8;
-      --white: #ffffff;
-      --max-w: 900px;
-    }
-
-    body {
-      font-family: "Georgia", serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text);
-      background: #f7f9fb;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--navy);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 6px rgba(0,0,0,.25);
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 0;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    nav ul li a {
-      display: block;
-      padding: .75rem 1.1rem;
-      color: #c8d8ea;
-      text-decoration: none;
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .85rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      transition: color .2s, background .2s;
-    }
-    nav ul li a:hover {
-      color: var(--white);
-      background: rgba(255,255,255,.08);
-    }
-
-    /* ── HERO ── */
-    header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 3.5rem 1.5rem 3rem;
-    }
-    .hero-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      gap: 2.5rem;
-    }
-    .hero-avatar {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: #b8cfe3;
-      flex-shrink: 0;
-      border: 3px solid rgba(255,255,255,.2);
-      font-family: "Helvetica Neue", sans-serif;
-      font-weight: 300;
-    }
-    .hero-text h1 {
-      font-size: 2.2rem;
-      font-weight: normal;
-      letter-spacing: .02em;
-      margin-bottom: .3rem;
-    }
-    .hero-text .position {
-      font-size: 1rem;
-      color: #a8c4dc;
-      margin-bottom: .2rem;
-      font-style: italic;
-    }
-    .hero-text .institution {
-      font-size: .95rem;
-      color: #7fa8c8;
-      margin-bottom: 1rem;
-    }
-    .hero-text .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .6rem;
-    }
-    .hero-text .contact-links a {
-      color: #c8dcea;
-      text-decoration: none;
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .85rem;
-      border: 1px solid rgba(200,220,234,.3);
-      padding: .25rem .65rem;
-      border-radius: 3px;
-      transition: border-color .2s, color .2s;
-    }
-    .hero-text .contact-links a:hover {
-      color: var(--white);
-      border-color: rgba(200,220,234,.7);
-    }
-
-    /* ── LAYOUT ── */
-    main {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    /* ── SECTION HEADER ── */
-    .section-title {
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: .4rem;
-      margin-bottom: 1.4rem;
-    }
-
-    /* ── ABOUT ── */
-    #about p {
-      max-width: 700px;
-      color: var(--text);
-    }
-
-    /* ── INTERESTS ── */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-    .tag {
-      background: var(--light-accent);
-      color: var(--accent);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: .3rem .75rem;
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .85rem;
-    }
-
-    /* ── POSITIONS / EDUCATION ── */
-    .entry {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: .3rem 1.2rem;
-      margin-bottom: 1.1rem;
-      align-items: start;
-    }
-    .entry-year {
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .82rem;
-      color: var(--muted);
-      padding-top: .15rem;
-      text-align: right;
-    }
-    .entry-body .degree {
-      font-weight: bold;
-    }
-    .entry-body .inst {
-      font-style: italic;
-    }
-    .entry-body .advisor {
-      font-size: .88rem;
-      color: var(--muted);
-    }
-
-    /* ── PUBLICATIONS ── */
-    .pub-list {
-      list-style: none;
-    }
-    .pub-list li {
-      margin-bottom: 1.1rem;
-      padding-left: 1.4rem;
-      position: relative;
-      font-size: .97rem;
-    }
-    .pub-list li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-    .pub-list li em {
-      font-style: italic;
-    }
-    .pub-list li .pub-authors {
-      color: var(--text);
-    }
-    .pub-list li .pub-me {
-      font-weight: bold;
-    }
-    .pub-badge {
-      display: inline-block;
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .7rem;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      padding: .15rem .45rem;
-      border-radius: 2px;
-      margin-left: .4rem;
-      vertical-align: middle;
-    }
-    .badge-review {
-      background: #fff3cd;
-      color: #856404;
-      border: 1px solid #ffd96a;
-    }
-    .badge-prep {
-      background: #e2ecf7;
-      color: var(--accent);
-      border: 1px solid var(--border);
-    }
-
-    /* ── PRESENTATIONS ── */
-    .pres-list {
-      list-style: none;
-    }
-    .pres-list li {
-      margin-bottom: 1rem;
-      padding-left: 1.4rem;
-      position: relative;
-      font-size: .97rem;
-    }
-    .pres-list li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-    .pres-list li em { font-style: italic; }
-
-    /* ── AWARDS ── */
-    .award-list {
-      list-style: none;
-    }
-    .award-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: .45rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .95rem;
-      gap: 1rem;
-    }
-    .award-list li:last-child { border-bottom: none; }
-    .award-year {
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .82rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-    .skill-group h3 {
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .82rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: .5rem;
-    }
-    .skill-group ul {
-      list-style: none;
-    }
-    .skill-group ul li {
-      font-size: .93rem;
-      padding: .2rem 0;
-      padding-left: 1rem;
-      position: relative;
-    }
-    .skill-group ul li::before {
-      content: "·";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 1.2rem;
-      line-height: 1.4;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 1.5rem;
-      font-family: "Helvetica Neue", sans-serif;
-      font-size: .8rem;
-      color: var(--muted);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 620px) {
-      .hero-inner { flex-direction: column; gap: 1.2rem; }
-      .hero-avatar { width: 90px; height: 90px; font-size: 2rem; }
-      .entry { grid-template-columns: 1fr; }
-      .entry-year { text-align: left; }
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#presentations">Presentations</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Header -->
-<header>
-  <div class="hero-inner">
-    <div class="hero-avatar">RC</div>
-    <div class="hero-text">
-      <h1>Rongxin Cheng</h1>
-      <p class="position">Postdoctoral Research Scholar</p>
-      <p class="institution">Department of Psychology &nbsp;·&nbsp; University of California, Riverside</p>
-      <div class="contact-links">
-        <a href="mailto:rxcheng@ucdavis.edu">✉ rxcheng@ucdavis.edu</a>
-        <a href="CV_Rongxin_Cheng.pdf" target="_blank">↓ Curriculum Vitae</a>
-      </div>
-    </div>
+<!-- ══ Masthead ══ -->
+<header class="masthead">
+  <div class="masthead__inner">
+    <div class="masthead__title"><a href="index.html">Rongxin Cheng</a></div>
+    <nav class="greedy-nav">
+      <a href="index.html" class="active">About</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="CV_Rongxin_Cheng.pdf" target="_blank">CV</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="index.html">About</a>
+  <a href="research.html">Research</a>
+  <a href="publications.html">Publications</a>
+  <a href="CV_Rongxin_Cheng.pdf" target="_blank">CV</a>
+</nav>
 
-<main>
+<!-- ══ Body ══ -->
+<div class="page__wrapper">
 
-  <!-- About -->
-  <section id="about">
-    <h2 class="section-title">About</h2>
-    <p>
-      I am a Postdoctoral Research Scholar in the Department of Psychology at the University of California, Riverside.
-      I received my Ph.D. in Personality Psychology from the University of California, Davis (2025), where I worked
-      with <a href="#" style="color: var(--accent);">Richard W. Robins</a>. My research draws on longitudinal data to
-      examine how personality traits, temperament, and socio-contextual factors shape individuals' development across
-      childhood, adolescence, and early adulthood — with a particular focus on educational outcomes and motivation
-      among Mexican-origin youth.
-    </p>
-  </section>
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
 
-  <!-- Research Interests -->
-  <section id="research">
-    <h2 class="section-title">Research Interests</h2>
-    <div class="tags">
-      <span class="tag">Personality Development</span>
-      <span class="tag">Class Identity</span>
-      <span class="tag">Educational Outcomes</span>
-      <span class="tag">Motivation Systems</span>
-      <span class="tag">Social-Contextual Influences</span>
-    </div>
-  </section>
-
-  <!-- Positions -->
-  <section id="positions">
-    <h2 class="section-title">Positions</h2>
-    <div class="entry">
-      <div class="entry-year">2026 – Present</div>
-      <div class="entry-body">
-        <span class="degree">Postdoctoral Research Scholar</span><br>
-        <span class="inst">University of California, Riverside</span> &nbsp;·&nbsp; Psychology
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education">
-    <h2 class="section-title">Education</h2>
-
-    <div class="entry">
-      <div class="entry-year">2021 – 2025</div>
-      <div class="entry-body">
-        <span class="degree">Ph.D., Personality Psychology</span><br>
-        <span class="inst">University of California, Davis</span><br>
-        <span class="advisor">Advisor: Richard W. Robins, Ph.D.</span>
-      </div>
+    <div class="author__avatar">
+      <!-- Replace with: <img src="assets/images/photo.jpg" alt="Rongxin Cheng"> -->
+      <div class="avatar-placeholder">Profile<br>Photo</div>
     </div>
 
-    <div class="entry">
-      <div class="entry-year">2019 – 2021</div>
-      <div class="entry-body">
-        <span class="degree">M.A., Psychology</span><br>
-        <span class="inst">New York University</span><br>
-        <span class="advisor">Advisors: Gabriele Oettingen, Ph.D. &amp; Irmak Olcaysoy Okten, Ph.D.</span>
-      </div>
+    <div class="author__content">
+      <h1 class="author__name">Rongxin Cheng</h1>
+      <p class="author__pronouns">she/her &nbsp;·&nbsp; 程蓉芯</p>
+      <p class="author__bio">
+        Postdoctoral Research Scholar<br>
+        Department of Psychology<br>
+        University of California, Riverside
+      </p>
     </div>
 
-    <div class="entry">
-      <div class="entry-year">2015 – 2019</div>
-      <div class="entry-body">
-        <span class="degree">B.A., Psychology</span><br>
-        <span class="inst">New York University Shanghai</span><br>
-        <span class="advisor">Advisor: Lixian Cui, Ph.D.</span>
-      </div>
+    <hr class="sidebar__divider" />
+
+    <div class="author__urls-wrapper">
+      <h3>Contact &amp; Links</h3>
+      <ul class="author__urls">
+        <li>
+          <span class="icon"><i class="fas fa-envelope"></i></span>
+          <a href="mailto:rxcheng@ucdavis.edu">rxcheng@ucdavis.edu</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+          <span>Riverside, CA</span>
+        </li>
+        <li>
+          <span class="icon"><i class="fas fa-file-alt"></i></span>
+          <a href="CV_Rongxin_Cheng.pdf" target="_blank">Curriculum Vitae</a>
+        </li>
+        <!-- Uncomment and fill in as needed:
+        <li>
+          <span class="icon"><i class="fab fa-google"></i></span>
+          <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fab fa-orcid"></i></span>
+          <a href="YOUR_ORCID_URL" target="_blank">ORCID</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <a href="YOUR_GITHUB_URL" target="_blank">GitHub</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fab fa-twitter"></i></span>
+          <a href="YOUR_TWITTER_URL" target="_blank">Twitter / X</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fab fa-linkedin"></i></span>
+          <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+        </li>
+        -->
+      </ul>
     </div>
-  </section>
 
-  <!-- Publications -->
-  <section id="publications">
-    <h2 class="section-title">Publications</h2>
+  </aside>
 
-    <ul class="pub-list">
+  <!-- ── Main Content ── -->
+  <main class="page__content">
 
-      <!-- Published -->
-      <li>
-        <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (2026). Do psychiatric problems from late childhood through adolescence predict poor achievement in school over and above temperament? Findings from a longitudinal study of Mexican-origin youth. <em>Developmental Psychology.</em>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, Lawson, K. M., &amp; Robins, R. W. (2024). Do temperament trajectories from late childhood to adolescence predict success and failure in school? Findings from a longitudinal study of Mexican-origin youth. <em>Journal of Personality and Social Psychology.</em>
-      </li>
-      <li>
-        Saqr, M., <span class="pub-me">Cheng, R.</span>, López Pernas, S., &amp; Beck, E. D. (2024). Individualized precision artificial intelligence to predict and explain learners' behaviour. <em>Learning and Individual Differences.</em>
-      </li>
-      <li>
-        Shi, B., <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (2024). Investigating the trajectory of Mexican-origin youth's materialistic values across adolescence and prospective associations with life satisfaction in early adulthood: The role of familism, demographic factors, and parent characteristics. <em>Journal of Personality and Social Psychology.</em>
-      </li>
-      <li>
-        Lawson, K. M., Bleidorn, W., Hopwood, C. J., <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (2023). Trajectories of temperament from late childhood through adolescence and associations with anxiety and depression in young adulthood. <em>European Journal of Personality.</em>
-      </li>
+    <h1 class="page__title">About Me</h1>
 
-      <!-- Under Review -->
-      <li>
-        Atherton, O. E.*, <span class="pub-me">Cheng, R.*</span>, Whang, P. H., &amp; Robins, R. W. (under review). How do the Big Five and well-being develop across the lifespan? Stability, change, co-development, and cohort differences in an 18-year longitudinal study of Mexican-origin youth and adults. <em>Journal of Personality and Social Psychology.</em>
-        <span class="pub-badge badge-review">Under Review</span>
-      </li>
+    <div class="about__body">
 
-      <!-- In Preparation -->
-      <li>
-        <span class="pub-me">Cheng, R.</span>, Trzesniewski, K. H., &amp; Robins, R. W. (in prep). Developmental antecedents of growth mindset in late adolescence: Findings from a longitudinal study of Mexican-origin youth.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (in prep). Prospective effect of personality traits on school outcomes: Incremental validity of traits between Big Five domains and temperament traits.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (in prep). Intrapersonal, interpersonal, and person-contextual processes linking personality traits to school outcomes: A Theoretical Model.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (in prep). Intrapersonal and interpersonal mediators of the associations between personality traits and school outcomes.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, &amp; Robins, R. W. (in prep). Family, school, neighborhood, and cultural moderators of the associations between personality traits and school outcomes.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, Zhao, Y., Ladd-Thomas, D., &amp; Trzesniewski, K. H. (in prep). A transition of motivation profile before and after a social and emotional learning intervention: Evidence from a large randomized-controlled trial of Indonesian youth.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, Zhou, R., &amp; Robins, R. W. (in prep). Predicting early adulthood life outcomes with high school achievement: A conceptual replication and extension of Starr et al. (2024).
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        <span class="pub-me">Cheng, R.</span>, Haghighat, M. D., Molina, D. C., Trzesniewski, K. H., Ferrer, E., &amp; Robins, R. W. (in prep). Precursors of the development of growth mindset in early adulthood: Findings from a longitudinal study of Mexican-origin youth.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-      <li>
-        Meza, E., <span class="pub-me">Cheng, R.</span>, Eastwick, P., &amp; Robins, R. W. (in prep). Codevelopment of caballerismo and traditional gender role ideology in romantic relationships.
-        <span class="pub-badge badge-prep">In Prep</span>
-      </li>
-
-    </ul>
-    <p style="font-size:.82rem; color:var(--muted); margin-top:.6rem;">* denotes equal contribution</p>
-  </section>
-
-  <!-- Presentations -->
-  <section id="presentations">
-    <h2 class="section-title">Presentations</h2>
-    <ul class="pres-list">
-      <li>
-        <strong>Cheng, R.</strong> &amp; Robins, R.W. (Nov 2025). <em>Do Temperament Trajectories from Late Childhood through Adolescence Predict School Outcomes over and above Psychiatric Symptoms? Findings from a 14-Year Longitudinal Study of Mexican-Origin Youth.</em> In L.J. Lengua (Chair), "Temperament in Health, Adjustment, and Psychopathology". Paper to be presented at the 25th Occasional Temperament Conference, College Station, TX.
-      </li>
-      <li>
-        <strong>Cheng, R.</strong>, Atherton, O.E., Whang, P.H., &amp; Robins, R.W. (Nov 2025). <em>How Do the Big Five Domains Develop Across the Lifespan? Stability, Change, and Cohort Differences in an 18-Year Longitudinal Study of Mexican-Origin Youth and Their Parents.</em> In K.M. Lawson (Chair), "Temperament and Personality across the Lifespan". Paper to be presented at the 25th Occasional Temperament Conference, College Station, TX.
-      </li>
-      <li>
-        <strong>Cheng, R.</strong> &amp; Robins, R.W. (Jun 2025). <em>Personality Traits and School Success: Unveiling Mechanisms and Contextual Moderators from a 17-Year Longitudinal Study of Mexican-Origin Youth.</em> In R. Cheng (Chair), "Personality in Academic Settings: Developmental Processes around the Globe". Paper presented at the Association for Research in Personality Biennial Conference, Evanston, IL.
-      </li>
-      <li>
-        <strong>Cheng, R.</strong> &amp; Robins, R.W. (Feb 2025). <em>Linking Personality Traits to School Outcomes: Intrapersonal and Interpersonal Processes: Findings from an 18-Year Longitudinal Study of Mexican-Origin Youth.</em> In R. Cheng (Chair), "Understanding Wellbeing and Development in Context: Adoption, Achievement, Autonomy, &amp; Authenticity". Paper presented at the Society for Personality and Social Psychology Annual Conference, Denver, CO.
-      </li>
-      <li>
-        <strong>Cheng, R.</strong> &amp; Robins, R.W. (Feb 2024). <em>Do Psychiatric Problems from Late Childhood through Adolescence Predict Educational Outcomes over and above the Effects of Temperament? Findings from a Longitudinal Study of Mexican-Origin Youth.</em> Paper presented in the Data Blitz at the Personality Preconference of the Society for Personality and Social Psychology Annual Conference, San Diego, CA.
-      </li>
-    </ul>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards">
-    <h2 class="section-title">Scholarships &amp; Awards</h2>
-    <ul class="award-list">
-      <li>
-        <span>Dean's Summer Graduate Support Award, University of California, Davis</span>
-        <span class="award-year">May 2025</span>
-      </li>
-      <li>
-        <span>Duke Travel Awards, University of California, Davis</span>
-        <span class="award-year">Dec 2024, 2025</span>
-      </li>
-      <li>
-        <span>SPSP Graduate Registration Stipend, Society for Personality and Social Psychology</span>
-        <span class="award-year">Oct 2024</span>
-      </li>
-      <li>
-        <span>GSAS Graduate Student Research Award, New York University</span>
-        <span class="award-year">Jan 2021</span>
-      </li>
-      <li>
-        <span>GSAS Dean's Conference Awards, New York University</span>
-        <span class="award-year">Nov 2020</span>
-      </li>
-      <li>
-        <span>Dean's Service Scholarship, New York University Shanghai</span>
-        <span class="award-year">Apr 2016</span>
-      </li>
-    </ul>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3>Programming</h3>
-        <ul>
-          <li>SPSS</li>
-          <li>Qualtrics</li>
-          <li>RStudio</li>
-          <li>Mplus</li>
-        </ul>
+      <!-- ── PERSONAL BIO — fill in below ── -->
+      <div class="placeholder-block">
+        <strong>✏ Personal bio (2–4 sentences)</strong>
+        Write a short introduction about yourself here — your background, what drives your research, and what you're currently working on.
       </div>
-      <div class="skill-group">
-        <h3>Analytic Methods</h3>
-        <ul>
-          <li>Structural Equation Modeling (growth curve models, factor analysis, latent transition analysis)</li>
-          <li>Multilevel Modeling (growth curve models, age-period-cohort models)</li>
-          <li>Machine Learning</li>
-        </ul>
+
+      <h2 class="section-heading">Research Interests</h2>
+
+      <div class="interests-tags">
+        <span class="tag">Personality Development</span>
+        <span class="tag">Class Identity</span>
+        <span class="tag">Educational Outcomes</span>
+        <span class="tag">Motivation Systems</span>
+        <span class="tag">Social-Contextual Influences</span>
       </div>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>
-      Department of Psychology<br>
-      University of California, Riverside<br>
-      <a href="mailto:rxcheng@ucdavis.edu" style="color: var(--accent);">rxcheng@ucdavis.edu</a>
-    </p>
-  </section>
+      <div class="placeholder-block">
+        <strong>✏ Research description (optional, 1–3 sentences)</strong>
+        Briefly describe the overarching themes or questions that connect your research areas.
+      </div>
 
-</main>
+      <h2 class="section-heading">Positions</h2>
 
-<footer>
-  &copy; 2026 Rongxin Cheng &nbsp;·&nbsp; Department of Psychology, UC Riverside
+      <div class="cv-section">
+        <div class="cv-entry">
+          <div class="cv-entry__year">2026 – Present</div>
+          <div class="cv-entry__body">
+            <span class="degree">Postdoctoral Research Scholar</span><br>
+            <span class="institution">University of California, Riverside</span> &nbsp;·&nbsp; Department of Psychology
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-heading">Education</h2>
+
+      <div class="cv-section">
+        <div class="cv-entry">
+          <div class="cv-entry__year">2021 – 2025</div>
+          <div class="cv-entry__body">
+            <span class="degree">Ph.D., Personality Psychology</span><br>
+            <span class="institution">University of California, Davis</span><br>
+            <span class="advisor">Advisor: Richard W. Robins, Ph.D.</span>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry__year">2019 – 2021</div>
+          <div class="cv-entry__body">
+            <span class="degree">M.A., Psychology</span><br>
+            <span class="institution">New York University</span><br>
+            <span class="advisor">Advisors: Gabriele Oettingen, Ph.D. &amp; Irmak Olcaysoy Okten, Ph.D.</span>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry__year">2015 – 2019</div>
+          <div class="cv-entry__body">
+            <span class="degree">B.A., Psychology</span><br>
+            <span class="institution">New York University Shanghai</span><br>
+            <span class="advisor">Advisor: Lixian Cui, Ph.D.</span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-heading">News &amp; Updates</h2>
+
+      <div class="placeholder-block">
+        <strong>✏ Recent news (optional)</strong>
+        Add recent updates here — new publications, talks, awards, or positions. Example format:<br><br>
+        <strong>[Month Year]</strong> New paper accepted at <em>Journal Name</em>.<br>
+        <strong>[Month Year]</strong> Presented at Conference Name, City.
+      </div>
+
+    </div><!-- /.about__body -->
+
+  </main>
+
+</div><!-- /.page__wrapper -->
+
+<footer class="page__footer">
+  <p>&copy; 2026 Rongxin Cheng &nbsp;·&nbsp;
+     Powered by <a href="https://github.com/academicpages/academicpages.github.io" target="_blank">Academic Pages</a>
+  </p>
 </footer>
 
+<script src="assets/js/main.js"></script>
 </body>
 </html>
