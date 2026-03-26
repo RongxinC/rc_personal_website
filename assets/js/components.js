@@ -7,7 +7,7 @@
 // Add, remove, or reorder nav links here.
 const NAV_LINKS = [
   { label: "About",        href: "index.html" },
-  { label: "Research",     href: "research.html" },
+  // { label: "Research",     href: "research.html" },  // hidden for now
   { label: "Publications", href: "publications.html" },
   { label: "CV",           href: "CV_Rongxin_Cheng.pdf", external: true },
 ];
