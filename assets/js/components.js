@@ -15,8 +15,8 @@ const NAV_LINKS = [
 // ── 2. SIDEBAR CONTENT ────────────────────────────────────────────────────────
 // Edit the values below — they propagate to every page automatically.
 const AUTHOR = {
-  name:       "Rongxin Cheng",
-  pronouns:   "she/her \u00a0·\u00a0 程容馨",
+  name:       "Rongxin Cheng 程容馨",
+  pronouns:   "she/her",
   title:      "Postdoctoral Research Scholar",
   dept:       "Department of Psychology",
   university: "University of California, Riverside",
