@@ -10,92 +10,14 @@
 </head>
 <body>
 
-<!-- ══ Masthead ══ -->
-<header class="masthead">
-  <div class="masthead__inner">
-    <div class="masthead__title"><a href="index.html">Rongxin Cheng</a></div>
-    <nav class="greedy-nav">
-      <a href="index.html" class="active">About</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="CV_Rongxin_Cheng.pdf" target="_blank">CV</a>
-    </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="publications.html">Publications</a>
-  <a href="CV_Rongxin_Cheng.pdf" target="_blank">CV</a>
-</nav>
+<div id="masthead-mount"></div>
 
 <!-- ══ Body ══ -->
 <div class="page__wrapper">
 
-  <!-- ── Sidebar ── -->
+  <!-- ── Sidebar (populated by assets/js/components.js) ── -->
   <aside class="sidebar">
-
-    <div class="author__avatar">
-      <img src="assets/images/profile.jpg" alt="Rongxin Cheng"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="avatar-placeholder" style="display:none;">RC</div>
-    </div>
-
-    <div class="author__content">
-      <h1 class="author__name">Rongxin Cheng</h1>
-      <p class="author__pronouns">she/her &nbsp;·&nbsp; 程容馨</p>
-      <p class="author__bio">
-        Postdoctoral Research Scholar<br>
-        Department of Psychology<br>
-        University of California, Riverside
-      </p>
-    </div>
-
-    <hr class="sidebar__divider" />
-
-    <div class="author__urls-wrapper">
-      <h3>Contact &amp; Links</h3>
-      <ul class="author__urls">
-        <li>
-          <span class="icon"><i class="fas fa-envelope"></i></span>
-          <a href="mailto:rongxinc@ucr.edu">rongxinc@ucr.edu</a>
-        </li>
-        <li>
-          <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-          <span>Riverside, CA</span>
-        </li>
-        <li>
-          <span class="icon"><i class="fas fa-file-alt"></i></span>
-          <a href="CV_Rongxin_Cheng.pdf" target="_blank">Curriculum Vitae</a>
-        </li>
-        <!-- Uncomment and fill in as needed:
-        <li>
-          <span class="icon"><i class="fab fa-google"></i></span>
-          <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank">Google Scholar</a>
-        </li>
-        <li>
-          <span class="icon"><i class="fab fa-orcid"></i></span>
-          <a href="YOUR_ORCID_URL" target="_blank">ORCID</a>
-        </li>
-        <li>
-          <span class="icon"><i class="fab fa-github"></i></span>
-          <a href="YOUR_GITHUB_URL" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <span class="icon"><i class="fab fa-twitter"></i></span>
-          <a href="YOUR_TWITTER_URL" target="_blank">Twitter / X</a>
-        </li>
-        <li>
-          <span class="icon"><i class="fab fa-linkedin"></i></span>
-          <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
-        </li>
-        -->
-      </ul>
-    </div>
-
+    <div id="sidebar-mount"></div>
   </aside>
 
   <!-- ── Main Content ── -->
@@ -169,6 +91,7 @@
   </p>
 </footer>
 
+<script src="assets/js/components.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

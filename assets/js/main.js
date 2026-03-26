@@ -1,14 +1,6 @@
 /* Academic Pages — JS helpers */
 
-// Mobile nav toggle
 document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("nav-toggle");
-  const mobileNav = document.getElementById("mobile-nav");
-  if (toggle && mobileNav) {
-    toggle.addEventListener("click", function () {
-      mobileNav.classList.toggle("open");
-    });
-  }
 
   // Publication filter buttons
   const filterBtns = document.querySelectorAll(".pub-filter-btn");

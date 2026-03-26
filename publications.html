@@ -9,85 +9,14 @@
 </head>
 <body>
 
-<!-- ══ Masthead ══ -->
-<header class="masthead">
-  <div class="masthead__inner">
-    <div class="masthead__title"><a href="index.html">Rongxin Cheng</a></div>
-    <nav class="greedy-nav">
-      <a href="index.html">About</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html" class="active">Publications</a>
-      <a href="CV_Rongxin_Cheng.pdf" target="_blank">CV</a>
-    </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="publications.html">Publications</a>
-  <a href="CV_Rongxin_Cheng.pdf" target="_blank">CV</a>
-</nav>
+<div id="masthead-mount"></div>
 
 <!-- ══ Body ══ -->
 <div class="page__wrapper">
 
-  <!-- ── Sidebar ── -->
+  <!-- ── Sidebar (populated by assets/js/components.js) ── -->
   <aside class="sidebar">
-
-    <div class="author__avatar">
-      <img src="assets/images/headshot.jpg" alt="Rongxin Cheng"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="avatar-placeholder" style="display:none;">RC</div>
-    </div>
-
-    <div class="author__content">
-      <h1 class="author__name">Rongxin Cheng</h1>
-      <p class="author__pronouns">she/her &nbsp;·&nbsp; 程容馨</p>
-      <p class="author__bio">
-        Postdoctoral Research Scholar<br>
-        Department of Psychology<br>
-        University of California, Riverside
-      </p>
-    </div>
-
-    <hr class="sidebar__divider" />
-
-    <div class="author__urls-wrapper">
-      <h3>Contact &amp; Links</h3>
-      <ul class="author__urls">
-        <li>
-          <span class="icon"><i class="fas fa-envelope"></i></span>
-          <a href="mailto:rongxinc@ucr.edu">rongxinc@ucr.edu</a>
-        </li>
-        <li>
-          <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-          <span>Riverside, CA</span>
-        </li>
-        <li>
-          <span class="icon"><i class="fas fa-file-alt"></i></span>
-          <a href="CV_Rongxin_Cheng.pdf" target="_blank">Curriculum Vitae</a>
-        </li>
-      </ul>
-    </div>
-
-    <hr class="sidebar__divider" />
-
-    <!-- pub stats -->
-    <div class="author__urls-wrapper">
-      <h3>Summary</h3>
-      <ul class="author__urls" style="list-style:none; gap:.25rem;">
-        <li style="display:flex; justify-content:space-between; font-size:.8rem;">
-          <span>Published</span><span style="font-weight:700; color:var(--color-heading);">5</span>
-        </li>
-        <li style="display:flex; justify-content:space-between; font-size:.8rem;">
-          <span>Under Review</span><span style="font-weight:700; color:var(--color-heading);">1</span>
-        </li>
-      </ul>
-    </div>
-
+    <div id="sidebar-mount"></div>
   </aside>
 
   <!-- ── Main Content ── -->
@@ -324,6 +253,7 @@
   </p>
 </footer>
 
+<script src="assets/js/components.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
