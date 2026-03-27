@@ -473,6 +473,25 @@ img { max-width: 100%; height: auto; display: block; }
 .badge-review     { background: #fff3cd; color: #856404; border: 1px solid #ffd96a; }
 .badge-prep       { background: #d6eaf8;  color: #1a5276;  border: 1px solid #a9cce3; }
 
+.pub-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 3px;
+  padding: .18rem .55rem;
+  text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.pub-pdf-link:hover {
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+}
+
 /* ── Notices (callout blocks) ── */
 .notice {
   padding: .8rem 1rem;
